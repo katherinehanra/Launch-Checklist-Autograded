@@ -1,6 +1,6 @@
 // Write your helper functions here!
 
-require("cross-fetch/polyfill");
+//require("cross-fetch/polyfill");
 
 function addDestinationInfo(
   document,
@@ -28,8 +28,7 @@ function addDestinationInfo(
 function validateInput(testInput) {
   if (testInput === "") {
     return "Empty";
-    //   } else if (isNaN(testInput) === true) {
-  } else if (testInput === "asdf") {
+  } else if (isNaN(testInput) === true) {
     return "Not a Number";
   } else {
     return "Is a Number";
@@ -96,14 +95,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 }
 
 async function myFetch() {
-  let planetsReturned;
-
-  planetsReturned = await fetch(
+  let planetsReturned = await fetch(
     "https://handlers.education.launchcode.org/static/planets.json"
   ).then(function (response) {
     return response.json();
   });
-
   return planetsReturned;
 }
 

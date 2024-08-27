@@ -59,6 +59,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   } else {
   }
 
+  if (
+    validateInput(pilot) === "Is a Number" ||
+    validateInput(copilot) === "Is a Number"
+  ) {
+    alert("Invalid. Pilot and Co-Pilot names must be a string.");
+  } else {
+  }
+
   if (fuelLevel < 10000 && cargoLevel > 10000) {
     list.style.visibility = "visible";
     launchStatus.innerHTML = "Shuttle Not Ready for Launch";
